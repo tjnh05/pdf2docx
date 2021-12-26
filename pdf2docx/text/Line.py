@@ -15,7 +15,10 @@ Data structure of line in text block referring to this
 '''
 
 from fitz import Point
-from collections import Iterable
+try:
+    from collections import Iterable
+ except ImportError:
+    from collections.abc import Iterable
 from .TextSpan import TextSpan
 from ..common.Element import Element
 from ..common.share import TextDirection
